@@ -1,20 +1,19 @@
-package com.example.Controller;
+package com.example.Controller.impl;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.Controller.helloworldOperation;
 
 @Controller
 @ResponseBody
-public class helloworldController {
+
+public class helloworldController implements helloworldOperation{
   
-  @GetMapping(value = "/hello") //URI 入口
   public String hello(){
     return "Hello world";
   }
 
-  @GetMapping(value = "/hello2") //URI 入口
   public String hello2(){
     return "goodbye";
   }
