@@ -17,7 +17,7 @@ import demo_bootcamp.demo_exercise2_springboot.service.CommentsService;
 import demo_bootcamp.demo_exercise2_springboot.service.PostService;
 import demo_bootcamp.demo_exercise2_springboot.service.UserService;
 @RestController
-public class UserandCommentsColloctor extends UserandCommentsOperetor{
+public class UserandCommentsColloctor extends UserandCommentsOperator{
 
   @Autowired
   UserService userService;

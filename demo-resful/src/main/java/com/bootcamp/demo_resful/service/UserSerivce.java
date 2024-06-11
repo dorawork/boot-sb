@@ -18,8 +18,6 @@ public interface UserSerivce {
 
   UserEntity updateUsername(Long id, UserReqDTO dto);
 
-
-
 /*   // Patch
   UserEntity updateEmailById(Long id, UserReqDTO dto);
 } */

@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import demo_bootcamp.demo_exercise2_springboot.controller.PostsOperetor;
+import demo_bootcamp.demo_exercise2_springboot.controller.PostsOperator;
 import demo_bootcamp.demo_exercise2_springboot.dto.PostsDTO;
 import demo_bootcamp.demo_exercise2_springboot.entity.PostsEntity;
 import demo_bootcamp.demo_exercise2_springboot.mapper.PostsMapper;
 import demo_bootcamp.demo_exercise2_springboot.service.PostService;
 
 @RestController
-public class PostsColloctors implements PostsOperetor {
+public class PostsColloctors implements PostsOperator {
 
   @Autowired
   private PostService postService;

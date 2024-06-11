@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import demo_bootcamp.demo_exercise2_springboot.dto.CommentsDTO;
 import demo_bootcamp.demo_exercise2_springboot.entity.CommentsEntity;
 
-public interface CommentsOperetor {
+public interface CommentsOperator {
 
   @GetMapping(value = "/getComments")
   List<CommentsDTO> getComments();

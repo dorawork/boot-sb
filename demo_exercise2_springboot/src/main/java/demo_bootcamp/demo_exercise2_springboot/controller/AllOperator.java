@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import demo_bootcamp.demo_exercise2_springboot.dto.CommentsDTO;
 
-public interface AllOperetor {
+public interface AllOperator {
 
 
     @GetMapping(value = "/getall")

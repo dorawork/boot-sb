@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bootcamp.demo_resful.controller.UserOperetor;
+import com.bootcamp.demo_resful.controller.UserOperation;
 import com.bootcamp.demo_resful.dto.UserDTO;
 import com.bootcamp.demo_resful.dto.reqDto.UserReqDTO;
 import com.bootcamp.demo_resful.entity.UserEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping(value = "/v5")
 
-public class UserController implements UserOperetor {
+public class UserController implements UserOperation {
   
   @Autowired //interface 
   private UserSerivce userSerivce; //#37 return userService.save

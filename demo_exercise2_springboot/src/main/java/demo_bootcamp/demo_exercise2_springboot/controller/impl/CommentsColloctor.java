@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import demo_bootcamp.demo_exercise2_springboot.controller.CommentsOperetor;
+import demo_bootcamp.demo_exercise2_springboot.controller.CommentsOperator;
 import demo_bootcamp.demo_exercise2_springboot.dto.CommentsDTO;
 import demo_bootcamp.demo_exercise2_springboot.entity.CommentsEntity;
 import demo_bootcamp.demo_exercise2_springboot.mapper.CommentsMapper;
 import demo_bootcamp.demo_exercise2_springboot.service.CommentsService;
 
 @RestController
-public class CommentsColloctor implements CommentsOperetor {
+public class CommentsColloctor implements CommentsOperator {
 
   @Autowired
   private CommentsService commentsSerivce;

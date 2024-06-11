@@ -13,7 +13,7 @@ import com.bootcamp.demo_resful.dto.UserDTO;
 import com.bootcamp.demo_resful.dto.reqDto.UserReqDTO;
 import com.bootcamp.demo_resful.entity.UserEntity;
 
-public interface UserOperetor {
+public interface UserOperation {
   
   @GetMapping(value = "/jsonplaceholder/users")
   List<UserDTO> getUsers();
