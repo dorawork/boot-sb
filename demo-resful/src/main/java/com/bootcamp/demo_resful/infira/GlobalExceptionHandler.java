@@ -5,8 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import lombok.Getter;
-
 // @RestControllerAdvice // @ContollerAdvice + @ResponseBody
 public class GlobalExceptionHandler {
 
@@ -31,23 +29,6 @@ public class GlobalExceptionHandler {
       BusinessRuntimeException e) {
     return new ErrorResponse(e.getCode(), e.getMessage());
   }
-
-  @Getter
-  private enum ErrorCode {
-    NPE(99, "Null Pointer Exception."), //
-    NFE(99, "Number Format Exception."), //
-    AE(99, "Arithmetic Exception."), //
-    ;
-
-    private int code;
-    private String desc;
-
-    private ErrorCode(int code, String desc) {
-      this.code = code;
-      this.desc = desc;
-    }
-  }
-
   // Alternative
   // @ExceptionHandler({NumberFormatException.class, NullPointerException.class,
   // ArithmeticException.class})

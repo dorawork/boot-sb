@@ -1,4 +1,4 @@
-package demo_bootcamp.demo_exercise2_springboot.infira;
+package demo_bootcamp.demo_exercise2_springboot.exception;
 
 import lombok.Getter;
 

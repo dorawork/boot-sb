@@ -1,5 +1,7 @@
 package demo_bootcamp.demo_exercise2_springboot.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,6 +26,7 @@ public class UsersDTO {
   private String phone;
   private String website;
   private CompanyDTO company;
+  private List<PostsDTO> post;
 
   @Getter
   @Builder
@@ -41,6 +44,7 @@ public class UsersDTO {
       private String lng;
     }
   }
+  
   @Getter
   @Builder
   public static class CompanyDTO{

@@ -17,7 +17,7 @@ import demo_bootcamp.demo_exercise2_springboot.repository.CommentsRepository;
 import demo_bootcamp.demo_exercise2_springboot.service.CommentsService;
 
 
-@Service 
+@Service
 public class CommentsServiceimpl implements CommentsService{
   
   @Value(value = "${api.json-place-holder.domain}") 

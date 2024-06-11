@@ -1,10 +1,13 @@
 package demo_bootcamp.demo_exercise2_springboot.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
 @Getter
-@NoArgsConstructor
+@Builder
+
 public class Comments {
 
   private int postId;

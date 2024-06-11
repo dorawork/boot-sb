@@ -12,7 +12,7 @@ database:
   db-name: "db_2403" #跟名
 
 spring:
-  datasource:
+  datasource: #BEANS->CONTEXT
     driverClassName: "org.postgresql.Driver"
     url: "jdbc:postgresql://localhost:5432/${database.db-name}"
     username: "postgres"

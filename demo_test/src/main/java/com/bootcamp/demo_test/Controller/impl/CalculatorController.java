@@ -38,6 +38,5 @@ public class CalculatorController implements CalculatorOperation {
       default:
         return new CalculatorDto(x, y, operation, null);
     }
-
   }
 }

@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public interface StopOperetor {
 
-  @GetMapping(value = "data.etabus.gov.hk/v1/transport/kmb/stop")
+  @GetMapping(value = "/")
   StopOperetor getStop();
   
 }

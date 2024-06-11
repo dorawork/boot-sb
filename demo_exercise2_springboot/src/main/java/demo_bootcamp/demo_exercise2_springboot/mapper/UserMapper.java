@@ -12,7 +12,7 @@ import demo_bootcamp.demo_exercise2_springboot.model.User;
 @Component
 public class UserMapper {  
 
-  public UsersDTO map(User user){
+  public UsersDTO usersmap(User user){
 
     GeoDTO geodto = GeoDTO.builder()//
        .lat(user.getAddress().getGeo().getLat())

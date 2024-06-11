@@ -1,10 +1,14 @@
 package demo_bootcamp.demo_exercise2_springboot.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
-@NoArgsConstructor
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@AllArgsConstructor
 @Getter
+@Builder
 
 public class Posts {
   
@@ -12,4 +16,5 @@ public class Posts {
   private int id;
   private String title;
   private String body;
+  private List<Comments> commment;
 }

@@ -1,12 +1,19 @@
 package com.bootcamp.demo_resful.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Builder
+@ToString
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class UserDTO { // 另一個DTO 
 
   private int id;
@@ -41,7 +48,6 @@ public class UserDTO { // 另一個DTO
   public static class CompanyDTO {
     private String name;
     //private String catchPhrase;
-    @JsonProperty(value = "bss")
     private String business;
   }
 }

@@ -1,4 +1,6 @@
-package demo_bootcamp.demo_exercise2_springboot.infira;
+package demo_bootcamp.demo_exercise2_springboot.exception;
+
+import demo_bootcamp.demo_exercise2_springboot.infira.BusinessException;
 
 public class NotFoundException extends BusinessException {
   

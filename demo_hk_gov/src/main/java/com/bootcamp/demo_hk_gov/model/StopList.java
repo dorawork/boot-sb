@@ -12,11 +12,24 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 
-public class BusStopList {
+public class StopList {
 
   private String type;
   private String version;
   private LocalDate generated_timestamp;
   private List<Data> data;
 
+  @Getter
+  public class Data{
+    String route;
+    String bound;
+    int Service_type;
+    String orig_en;
+    String orig_tc;
+    String orig_sc;
+    String dest_en;
+    String dest_tc;
+    String dest_sc;
+
+  }
 }

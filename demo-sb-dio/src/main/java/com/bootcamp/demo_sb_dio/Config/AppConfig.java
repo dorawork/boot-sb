@@ -10,7 +10,7 @@ import com.bootcamp.demo_sb_dio.model.User;
 
 import jakarta.annotation.PostConstruct;
 
-@Configuration // beans
+@Configuration // beans 死物 -> 生物
 public class AppConfig {
   
   public final List <User> users = new ArrayList<>();
@@ -19,10 +19,15 @@ public class AppConfig {
     return this.users;
   }
 
-  @Bean
+  @Bean 
   Stock geStock(){
     return new Stock(999, ".", 250);
   }
+  //(library new 在自己class裡 ->再用Autowired  將死物Object->context->autowired)
+  //@Bean
+  //StockMapper stockMapper(){
+  //return new stoeckMapper();  
+  //}
 
   @PostConstruct // 確保有DATA,附加OBJECT
   public void dummyUser(){

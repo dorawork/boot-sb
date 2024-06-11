@@ -1,8 +1,8 @@
-package com.example.Controller;
+package com.bootcamp.demo_testclass.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.model.Cat;
+import com.bootcamp.demo_testclass.model.Cat;
 
 public interface TestOperation {
 
@@ -11,9 +11,6 @@ public interface TestOperation {
 
   @GetMapping(value = "/hello12")
   public String testSayHello2();
-
-  @GetMapping(value = "/catwhite")
-  public Cat getwhiteCat();
 
   @GetMapping(value = "/catblack")
   public Cat getblackCat();

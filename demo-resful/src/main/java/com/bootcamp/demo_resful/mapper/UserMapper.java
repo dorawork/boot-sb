@@ -9,7 +9,11 @@ import com.bootcamp.demo_resful.dto.UserDTO.CompanyDTO;
 import com.bootcamp.demo_resful.model.dto.User;
 
 @Component
-public class UserMapper {  //要溫書**
+public class UserMapper {  
+
+  // HSBCUserDTO -> User (model) -> UserEntity
+  // GovUserDTO -> User (model) -> ThridUserDTO -> call third Part API
+  // 
 
   public UserDTO map(User user){
     //因為要包裝 -> DTO 用GET 出其他

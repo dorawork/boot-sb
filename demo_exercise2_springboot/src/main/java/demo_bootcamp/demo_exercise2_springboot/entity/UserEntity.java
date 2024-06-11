@@ -6,10 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 // JPA will generate the DDL (Create Table) by the defintion in Entity Classs
+@AllArgsConstructor
 @Setter
 @Getter
 @Entity
@@ -39,7 +41,7 @@ public class UserEntity {
   private String phone;
   @Column(name = "website")
   private String website;
-  @Column(name = "name")
+  @Column(name = "company_name")
   private String companyName;
   @Column(name = "catch_phrase")
   private String companyCatchPhrase;

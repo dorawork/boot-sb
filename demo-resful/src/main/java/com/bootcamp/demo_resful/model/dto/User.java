@@ -38,7 +38,7 @@ public class User {// 3個class合1個
   public static class Company {
     private String name;
     private String catchPhrase;
-    @JsonProperty(value = "bss")
+    @JsonProperty(value = "bs")
     private String business;
   }
 }

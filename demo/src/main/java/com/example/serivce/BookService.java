@@ -1,4 +1,4 @@
-/* package com.example.serivce;
+package com.example.serivce;
 
 import java.util.Map;
 
@@ -11,4 +11,3 @@ public interface BookService {
   Map<Long, Book>getBookMap();
 
 }
- */
