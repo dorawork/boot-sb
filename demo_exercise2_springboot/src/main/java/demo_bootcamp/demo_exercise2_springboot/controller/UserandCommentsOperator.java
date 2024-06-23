@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.UserandCommentsDTO;
 
 public interface UserandCommentsOperator {
-  
+
   @GetMapping(value = "/getuserid/comments")
   UserandCommentsDTO getCommentsById(@RequestParam int userId);
 }
+

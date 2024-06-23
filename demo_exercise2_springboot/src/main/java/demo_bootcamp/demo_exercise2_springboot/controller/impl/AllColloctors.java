@@ -1,37 +1,52 @@
-/* package demo_bootcamp.demo_exercise2_springboot.controller.impl;
+package demo_bootcamp.demo_exercise2_springboot.controller.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import demo_bootcamp.demo_exercise2_springboot.controller.ForumOperetor;
-import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.ForumDTO;
-import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.PostandCommentsDTO;
-import demo_bootcamp.demo_exercise2_springboot.mapper.ForumMapper;
-import demo_bootcamp.demo_exercise2_springboot.mapper.UserMapper;
+import demo_bootcamp.demo_exercise2_springboot.controller.AllOperator;
+import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.AllDTO;
+import demo_bootcamp.demo_exercise2_springboot.mapper.AllMapper;
+import demo_bootcamp.demo_exercise2_springboot.model.Comments;
+import demo_bootcamp.demo_exercise2_springboot.model.Posts;
+import demo_bootcamp.demo_exercise2_springboot.model.User;
 import demo_bootcamp.demo_exercise2_springboot.service.CommentsService;
 import demo_bootcamp.demo_exercise2_springboot.service.PostService;
 import demo_bootcamp.demo_exercise2_springboot.service.UserService;
 
-public class ForumColloctors implements ForumOperetor{
+public class AllColloctors implements AllOperator {
 
- @Autowired
-  private UserService userService;
+     @Autowired
+     private UserService userService;
 
-  @Autowired
-  private PostService postService;
+     @Autowired
+     private PostService postService;
 
-  @Autowired
-  private CommentsService commentsService;
+     @Autowired
+     private CommentsService commentsService;
 
-  @Autowired
-  private UserMapper usermapper;
+     @Override
+     public List<AllDTO> getAllData() {
+          List<User> users = userService.getUsers();
+          List<Posts> posts = postService.getPosts();
+          List<Comments> comments = commentsService.getcomments();
 
-  @Override
-   public PostandCommentsDTO getPostandCommentsDTO(int id){
-        commentsService.getcomments();
-        postService.getPosts();
-       
-   } */
+          // filter stream id
+          List<AllDTO> allDTO = users.stream()//
+                    .map(u -> {
+                         List<Posts> userPosts = posts.stream()//
+                                   .filter(p -> p.getUserId() == u.getId())//
+                                   .collect(Collectors.toList());
+                         List<Comments> userComments = comments.stream()//
+                                   .filter(c -> userPosts.stream()//
+                                             .anyMatch(p -> p.getId() == c.getPostId()))//
+                                   .collect(Collectors.toList());
+                         return AllMapper.allMap(u, userPosts, userComments);
+                    })//
+                    .collect(Collectors.toList());
+
+          return allDTO;
+     }
+
+}

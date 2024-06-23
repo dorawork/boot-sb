@@ -22,10 +22,10 @@ public class AllDTO {
   private String name;
   private String username;
   private String email;
-  private Address address;
+  private AddressDTO address;
   private String phone;
   private String website;
-  private Company company;
+  private CompanyDTO company;
   private List<PostsDTO> post;
 
   @AllArgsConstructor
@@ -54,18 +54,18 @@ public class AllDTO {
   @NoArgsConstructor
   @Getter
   @Builder
-  public static class Address {
+  public static class AddressDTO {
     private String street;
     private String suite;
     private String city;
     private String zipcode;
-    private Geo geo;
+    private GeoDTO geo;
 
     @AllArgsConstructor
     @NoArgsConstructor
     @Getter
     @Builder
-    public static class Geo {
+    public static class GeoDTO {
       private String lat;
       private String lng;
     }
@@ -75,7 +75,7 @@ public class AllDTO {
   @NoArgsConstructor
   @Getter
   @Builder
-  public static class Company {
+  public static class CompanyDTO {
     private String name;
     private String catchPhrase;
     private String bs;

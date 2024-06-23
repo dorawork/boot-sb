@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import demo_bootcamp.demo_exercise2_springboot.controller.UserandCommentsOperator;
 import demo_bootcamp.demo_exercise2_springboot.dto.CommentsDTO;
 import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.UserandCommentsDTO;
 import demo_bootcamp.demo_exercise2_springboot.mapper.UserandComment.UserandCommentsMapper;
@@ -41,14 +42,10 @@ public class UserandCommentsColloctor extends UserandCommentsOperator{
 
       List<Comments> userComments = commentsService.getcomments().stream()//
       .filter(c  -> userPosts.stream()
-      .anyMatch(p -> p.getId() == c.getPostId()))// ID CHECK COMMENTS
+      .anyMatch(p -> p.getId() == c.getPostId())) // ID CHECK COMMENTS
       .collect(Collectors.toList());
 
-/*       List<CommentsDTO> commentsDTOs = userComments.stream()//
-      .map(c -> UserandCommentsMapper.commentsMap(c))//
-      .collect(Collectors.toList());
- */
       return UserandCommentsMapper.userandCommentsMap(user, userComments);
     }
   
-}
+} 

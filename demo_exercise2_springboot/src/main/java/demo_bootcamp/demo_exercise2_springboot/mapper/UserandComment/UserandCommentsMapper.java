@@ -9,6 +9,7 @@ import demo_bootcamp.demo_exercise2_springboot.dto.respDTO.UserandCommentsDTO.Co
 import demo_bootcamp.demo_exercise2_springboot.model.Comments;
 import demo_bootcamp.demo_exercise2_springboot.model.User;
 
+
 @Component
 public class UserandCommentsMapper {
   public static CommentsDTO commentsMap(Comments comments) {

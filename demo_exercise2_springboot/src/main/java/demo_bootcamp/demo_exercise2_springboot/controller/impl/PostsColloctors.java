@@ -28,7 +28,6 @@ public class PostsColloctors implements PostsOperator {
         .collect(Collectors.toList());
   }
 
-
   @Override
   public PostsEntity savePosts(PostsEntity post){
     return postService.save(post);

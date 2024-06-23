@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.bootcamp.demo_resful.dto.UserDTO;
 import com.bootcamp.demo_resful.infira.ApiResp;
+import com.bootcamp.demo_resful.infira.UserDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

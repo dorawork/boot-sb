@@ -12,19 +12,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 // JPA will generate the DDL (Create Table) by the defintion in Entity Classs
 @Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@ToString
 @Table(name = "Users")
 public class UserEntity implements Serializable {
 
@@ -61,6 +54,31 @@ public class UserEntity implements Serializable {
 /*   @OneToMany(mappedBy = "user" //
       ,cascade = CascadeType.ALL)
   @JsonManagedReference*/
+  // Version: With reference column user_id, but without Foreign key
+  // Unidirectional Relationship
+
+  // @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+  // @JoinColumn(name = "user_id")
+  // private List<PostEntity> posts = new ArrayList<>();
+
+  // Version: With reference column + Foreign key
+  // Directional Relationship
+  // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  // @JsonManagedReference
+  // private List<PostEntity> posts = new ArrayList<>();
+
+  // Cascade:
+  // PERSIST: When the parent entity is persisted (saved), the child entities
+  // will also be persisted.
+  // MERGE: When the parent entity is merged (updated), the child entities will
+  // also be merged.
+  // REMOVE: When the parent entity is removed (deleted), the child entities
+  // will also be removed.
+  // REFRESH: When the parent entity is refreshed, the child entities will also
+  // be refreshed.
+  // DETACH: When the parent entity is detached, the child entities will also be
+  // detached.
+
   @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
   @JoinColumn(name = "user_id")
     private List<PostEntity> posts = new ArrayList<>(); //最簡單ONE TO MANY版本

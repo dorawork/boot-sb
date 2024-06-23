@@ -52,3 +52,7 @@ public class UserServiceimpl implements UserService {
     return userRepository.save(user);
   }
 }
+
+//redis get datebase 
+//係redis 拎野 !=null -> 
+//datebase in find 資料
